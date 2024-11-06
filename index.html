@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Bluetooth</title>
+  <script>
+    function pairDevice() {
+      console.log("Trying to pair device...");
+      window.flutter_inappwebview.callHandler('pairDevice')
+        .then(function(devices) {
+          console.log("Devices: ", devices);
+        })
+        .catch(function(error) {
+          console.error("Error calling Flutter handler:", error);
+        });
+    }
+  </script>
+</head>
+<body>
+  <button onclick="pairDevice()">Pair Device</button>
+</body>
+</html>
